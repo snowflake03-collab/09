@@ -1,19 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define SIZE 5 //전처리 
 
 int main(void)
 { 
-  int test_score [5];
-  int i;
+  int i, average;
+  int sum;
+  int grade[SIZE];
+  printf("%d명의 점수를 입력하세요.\n", SIZE); 
   
-  test_score[0] = 10;
-  test_score[1] = 20;
-  test_score[2] = 30;
-  test_score[3] = 40;
-  test_score[4] = 50;
+  sum = 0;  
+  for(i=0; i<SIZE; i++){
+           scanf("%d", &grade[i]);
+           sum += grade[i];
+  }
   
-  for(i=0; i<5; i++)
-           printf("grade[%i] = %i\n", i, test_score[i]);
+  average = sum / SIZE;
+  printf("average grade: %d\n", average);
+  
+  //#if 0 -> 주석 처리랑 똑같은 효과, 지우기엔 아까울때 
+  #if 0 
+  for( i=0; i<SIZE; i++)
+       printf(“grade[%d] = %d\n”, i, grade[i]);
+ #endif
   
   system("PAUSE");	
   return 0;
